@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset ="utf-8">
+      <meta name="viewport" content="width=device-width" inital-scale="1.0">
+      <meta name="autor" content="Farcas Iulian">
+      <meta name="keywords" content="HTML, CSS, Javascript">
+      <meta http http-equiv="refresh" content="30">
+      <title>Count Down Clock until new year</title>
+      <link rel="stylesheet" href="countDownClockcss.css">
+    </head>
+    <body>
+        <p id="countDownClock"></p>
+    <script>
+      var countDownDate = new Date("Jan 1, 2023 0:00:00").getTime();
+      var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 *60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countDownClock").innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ";
+      if(distance<0) {
+        clearInterval(x);
+        document.getElementById("countDownClock").innerHTML ="EXPIRED";
+       }
+      }, 1000);
+    </script>
+    </body>
+</html>

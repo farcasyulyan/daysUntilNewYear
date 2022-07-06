@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(166, 231, 166);
+}
+
+#countDownClock {
+    color: rgb(255, 0, 0);
+    font-size: 120px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 300px;
+}
